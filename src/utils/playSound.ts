@@ -1,6 +1,6 @@
 const FREQ_MIN = 200;
 const FREQ_MAX = 600;
-const VOLUME = 0.05;
+const VOLUME = 0.025;
 
 const audioContext = new window.AudioContext();
 
