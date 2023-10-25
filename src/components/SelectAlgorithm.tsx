@@ -12,7 +12,7 @@ const SelectAlgorithm = () => {
     appContext?.setAlgorithm(newAlgorithm);
 
     if (appContext?.state == 'sorted') {
-      appContext?.setArray(createRandomArray(appContext?.arraySize));
+      appContext?.setArray(createRandomArray(appContext?.arraySize)!);
       appContext?.setState('unsorted');
       document.getElementById('timer')!.innerHTML =
         'Time Elapsed : n / a';
