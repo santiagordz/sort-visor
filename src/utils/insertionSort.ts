@@ -6,6 +6,8 @@ import {
   sortFinished,
 } from './functions';
 
+import { playNote, setFrequency } from './playSound';
+
 export async function insertionSort(array: number[]) {
   const bars = getBars();
   for (let i = 1; i < array.length; i++) {
@@ -21,6 +23,8 @@ export async function insertionSort(array: number[]) {
       // Update the visualization
       bars[j + 1].style.height = array[j + 1] * 2 + 'px';
       bars[j + 1].style.backgroundColor = 'lightgreen';
+      const frequency = setFrequency(bars[j], bars[j + 1]);
+      playNote(frequency, 50);
 
       j--;
 

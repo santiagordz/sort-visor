@@ -6,6 +6,8 @@ import {
   sortFinished,
 } from './functions';
 
+import { playNote, setFrequency } from './playSound';
+
 export async function mergeSort(
   array: number[],
   left: number,
@@ -83,6 +85,12 @@ async function visualizeMergeStep(
 
   bars[index].style.height = value * 2 + 'px';
   bars[index].style.backgroundColor = 'lightgreen';
+
+  const frequency = setFrequency(
+    bars[index - 1] ? bars[index - 1] : bars[index],
+    bars[index]
+  );
+  playNote(frequency, 50);
 
   await sleep(10);
 }

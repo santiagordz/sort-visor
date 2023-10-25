@@ -6,6 +6,8 @@ import {
   sortFinished,
 } from './functions';
 
+import { playNote, setFrequency } from './playSound';
+
 export async function bubbleSort(array: number[]) {
   const bars = getBars();
   for (let i = 0; i < array.length; i++) {
@@ -16,6 +18,8 @@ export async function bubbleSort(array: number[]) {
             bars[k].style.backgroundColor = '';
           }
         }
+        const frequency = setFrequency(bars[j], bars[j + 1]);
+        playNote(frequency, 50);
         const temp = array[j];
         array[j] = array[j + 1];
         array[j + 1] = temp;

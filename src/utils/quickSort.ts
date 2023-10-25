@@ -6,6 +6,8 @@ import {
   sortFinished,
 } from './functions';
 
+import { playNote, setFrequency } from './playSound';
+
 export async function quickSort(
   array: number[],
   low: number,
@@ -70,6 +72,8 @@ async function visualizeSwap(
   bars[index1].style.backgroundColor = 'lightgreen';
   bars[index2].style.height = value2 * 2 + 'px';
   bars[index2].style.backgroundColor = 'lightgreen';
+  const frequency = setFrequency(bars[index1], bars[index2]);
+  playNote(frequency, 50);
 
   await sleep(10);
 }

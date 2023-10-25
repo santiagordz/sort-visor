@@ -1,3 +1,5 @@
+import { setFrequency, playNote } from './playSound';
+
 export function randomNum(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
@@ -39,6 +41,8 @@ export async function sortFinished() {
   }
   for (let i = 0; i < bars.length; i++) {
     bars[i].style.backgroundColor = 'lightgreen';
+    const frequency = setFrequency(bars[i], bars[i]);
+    playNote(frequency, 50);
     await sleep(20);
   }
 }
