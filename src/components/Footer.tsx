@@ -9,7 +9,14 @@ export default function Footer() {
       >
         @santiagordz
       </a>
-      <a> | repository</a>
+      <a
+        href="https://github.com/santiagordz/sort-visor"
+        target="_blank"
+        className="underline text-blue-400"
+      >
+        {' '}
+        | repository
+      </a>
     </footer>
   );
 }
