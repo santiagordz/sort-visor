@@ -2,9 +2,11 @@ export function randomNum(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export function createRandomArray(arraySize: number): number[] {
+export function createRandomArray(
+  arraySize: number | undefined
+): number[] | undefined {
   const arr: number[] = [];
-  for (let i = 0; i < arraySize; i++) {
+  for (let i = 0; i < arraySize!; i++) {
     arr.push(randomNum(1, 100));
   }
   return arr;

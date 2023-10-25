@@ -16,7 +16,7 @@ export async function bubbleSort(array: number[]) {
             bars[k].style.backgroundColor = '';
           }
         }
-        let temp = array[j];
+        const temp = array[j];
         array[j] = array[j + 1];
         array[j + 1] = temp;
         bars[j].style.height = array[j] * 2 + 'px';

@@ -6,8 +6,8 @@ const RandomizeButton = () => {
   const appContext = useContext(AppContext);
 
   const handleClick = () => {
-    const array = createRandomArray(appContext?.arraySize!)!;
-    appContext?.setArray(array);
+    const array = createRandomArray(appContext?.arraySize);
+    appContext?.setArray(array!);
     appContext?.setState('unsorted');
     document.getElementById('timer')!.innerHTML =
       'Time Elapsed : n / a';
